@@ -1,0 +1,26 @@
+﻿@page
+@model Activities.Pages.ActivitiesApp.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2 class="mt-4">Delete this Activity</h2>
+<form method="post">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="@Model.Activity.Name" class="form-label mt-4"></label>
+            <input type="text" asp-for="@Model.Activity.Name" placeholder="Enter Activity" disabled readonly class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Activity.Location" class="form-label mt-4"></label>
+            <input type="text" asp-for="@Model.Activity.Location" placeholder="Enter Location" disabled readonly class="form-control" />
+        </div>
+        <div class="form-group date-picker">
+            <label asp-for="@Model.Activity.Date" class="form-label mt-4"></label>
+            <input type="date" asp-for="@Model.Activity.Date" disabled readonly class="form-control" />
+        </div>
+        <input type="hidden" readonly asp-for="Activity.Id" />
+        <a asp-page="Index" class="btn btn-success mt-4"><i class="bi bi-backspace"></i>&nbsp;Back</a>
+        <button type="submit" class="btn btn-danger mt-4"><i class="bi bi-trash"></i> &nbsp;Delete</button>
+    </fieldset>
+</form>
+

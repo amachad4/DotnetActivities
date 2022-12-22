@@ -1,0 +1,33 @@
+﻿@page
+@model Activities.Pages.ActivitiesApp.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2 class="mt-4">Create an Activity</h2>
+
+    <form method="post">
+        <fieldset>
+            <div class="form-group">
+                <label asp-for="Activity.Name" class="form-label mt-4"></label>
+                <input type="text" asp-for="Activity.Name" placeholder="Enter an activity name" class="form-control" />
+                <span asp-validation-for="Activity.Name"></span> 
+            </div>
+            <div class="form-group">
+                <label asp-for="Activity.Location" class="form-label mt-4"></label>
+                <input type="text" asp-for="Activity.Location" placeholder="Enter a Location" class="form-control" />
+                <span asp-validation-for="Activity.Location"></span>
+        </div>
+            <div class="form-group date-picker">
+                <label asp-for="Activity.Date" class="form-label mt-4"></label>
+                <input type="date" asp-for="Activity.Date" class="form-control" />
+                <span asp-validation-for="Activity.Date"></span>
+            </div>
+            <a asp-page="Index" class="btn btn-secondary mt-4"><i class="bi bi-backspace"></i>&nbsp;Back</a>
+            <button type="submit" class="btn btn-success mt-4">
+                <i class="bi bi-pencil-square"></i>
+                &nbsp;Create
+            </button>
+        </fieldset>
+    </form>
+
